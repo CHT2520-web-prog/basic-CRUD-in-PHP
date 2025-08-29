@@ -170,7 +170,7 @@ Now move onto [Completing the practical work](#practical).
 
 - Have a good look through the code in _index.php_. Make sure you understand what each line of code is doing. Refer to [Form Processing](form-processing.md) and [PHP, Databases and PDO](pdo.md) for explanations.
 
-### Getting the other functions to work
+### Getting the other operations to work
 
 - If you click on one of the links in _index.php_, this takes you to _show.php_, and you'll get an error. Open up _show.php_ and edit the connection settings just like you did in _index.php_. The _show.php_ page should then work.
 - Continue by changing the connection settings in the other files to get the whole application to work. Make sure you look carefully through the code so you understand how the application has been built.
@@ -179,6 +179,7 @@ Now move onto [Completing the practical work](#practical).
 
 ### Questions
 
+- _create.php_ doesn't connect to the database. Why?
 - In _show.php_ the details for a single film are shown, how does this page 'know' which film to display i.e. how is data passed from _index.php_ to _show.php_?
 
 - _destroy.php_ (and _update.php_) also operate on a single film. How do these pages know which film to delete/update e.g. how is data passed from _show.php_ to _destroy.php_? How is this different to the way in which data is passed from _index.php_ to _show.php_?
@@ -192,5 +193,5 @@ Now move onto [Completing the practical work](#practical).
 
 ### Optional extra
 
-- It would be a much better use of your time to really understand the basic CRUD code is this repository, but if you fully grasp everything you could consider the following:-
+- Make sure you really understand the basic CRUD code is this repository, this is the basis for future examples we will look at (inluding Laravel). However, if you fully understand the code, try the following:
 - These examples are as simple as they can be. How could you perform some basic user input validation i.e. testing that the user has completed all the fields when adding a new film. Hint: You will need to add some code in _store.php_ to test the values from the form. If you detect a problem, `echo` out a message to the user and use `die();` to prevent the INSERT code from running.
