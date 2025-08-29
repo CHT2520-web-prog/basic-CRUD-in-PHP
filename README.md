@@ -160,7 +160,7 @@ INSERT INTO `films` (`id`, `title`, `year`, `duration`) VALUES
     $conn = new PDO('mysql:host=localhost;dbname=MyDatabase', 'MyUsername', 'MyPassword');
 ```
 
-You will need to change _MyDatabase_ to cht2520, and _MyUsername_ and _MyPassword_ to match your the username and password you entered.
+You will need to change _MyDatabase_ to cht2520, and _MyUsername_ and _MyPassword_ to match the username and password you entered.
 
 - View _index.php_ in a browser. You should see a list of films.
 
