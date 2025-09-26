@@ -26,11 +26,11 @@ A new tab should open for Adminer.
 
 Adminer is like a lightweight version of phpmyadmin.
 To log into Adminer enter the following:-
-username: root
-password: secret
-database: cht2520
+- username: **root**
+- password: **secret**
+- database: **cht2520**
 
-This will give you access to a database called cht2520.
+This will give you access to a database called **cht2520**.
 Select 'SQL Command' and enter the following SQL
 
 ```sql
@@ -66,13 +66,12 @@ INSERT INTO `films` (`id`, `title`, `year`, `duration`) VALUES
 (NULL, 'Get Out', 2017, 117);
 ```
 
-Hit 'Execute'
-from near the top of the page select the database (cht2520) and then select the films table and then Select data to confirm this has worked.
+- Hit 'Execute'
+- From near the top of the page select the database (cht2520) and then select the films table and then 'select data' to confirm this has worked.
 
 ### Getting started
 
-Back in the codespace, from the basic-CRUD-in-PHP folder, open index.php
-change the connection settings to match your database and enviornment. This is the line you need to change
+- Back in the codespace, from the *basic-CRUD-in-PHP* folder, open *index.php*. Change the connection settings to match your database and enviornment. This is the line you need to change
 
 ```
     $conn = new PDO('mysql:host=localhost;dbname=MyDatabase', 'MyUsername', 'MyPassword');
@@ -83,15 +82,14 @@ You will need to change it to:
 ```
     $conn = new PDO('mysql:host=db;dbname=cht2520', 'root', 'secret');
 ```
-
-Start Apache (`apache2ctl start`)
-Browse to the basic-CRUD-in-PHP folder. You should see the index.php page displayed. it should be showing the list of films from the database.
+- Start Apache (`apache2ctl start`)
+- Browse to the *basic-CRUD-in-PHP* folder. You should see the *index.php* page displayed. it should be showing the list of films from the database.
 
 Now move onto [Completing the practical work](#practical)
 
 ## If you are using XAMPP <a name="xampp"></a>
 
-- Download this repository and unzip it. Move the folder into your htdocs directory on XAMPP.
+- Download this repository and unzip it. Move the folder into your *htdocs* directory on XAMPP.
 
 ### Setting up a database
 
