@@ -190,6 +190,5 @@ Now move onto [Completing the practical work](#practical).
 - How would you edit the code so that the list of films in _index.php_ appears in date order with the most recent first.
 
 ### Optional extra
-
-- Make sure you really understand the basic CRUD code is this repository, this is the basis for future examples we will look at (inluding Laravel). However, if you fully understand the code, try the following:
+Make sure you really understand the basic CRUD code is this repository, this is the basis for future examples we will look at (inluding Laravel). However, if you fully understand the code, try the following:
 - These examples are as simple as they can be. How could you perform some basic user input validation i.e. testing that the user has completed all the fields when adding a new film. Hint: You will need to add some code in _store.php_ to test the values from the form. If you detect a problem, `echo` out a message to the user and use `die();` to prevent the INSERT code from running.
