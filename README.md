@@ -7,7 +7,7 @@ These examples demonstrate the use of PDO to implement CRUD (Create, Read, Updat
 
 ## If you are using Codespaces <a name="codespaces"></a>
 
-- Open your existing codespace (you shouldn't create a new one) [https://github.com/codespaces](https://github.com/codespaces).
+- Open your existing codespace (DON'T CREATE A NEW ONE) [https://github.com/codespaces](https://github.com/codespaces).
 - In the terminal enter
 
 ```
