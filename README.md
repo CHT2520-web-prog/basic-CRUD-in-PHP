@@ -2,35 +2,33 @@
 
 These examples demonstrate the use of PDO to implement CRUD (Create, Read, Update, Delete) functionality for a simple web application.
 
-- [Follow these instructions if you are using Codespaces](#codespaces)
-- [Follow these instruction if you are using XAMPP](#xampp)
+The following instructions explain how to get started if you are using Codespace. 
 
-## If you are using Codespaces <a name="codespaces"></a>
+If you are using Herd, you will need to install a database. 
+- My advice is to use https://dbngin.com/ to get started with a relational database.
+- I'd also recommend installing TablePlus (https://tableplus.com/) as visual tool for managing your databases. Alternatively you could simply use the SQLTools extension for VS Code. 
 
-- Open your existing codespace (DON'T CREATE A NEW ONE) [https://github.com/codespaces](https://github.com/codespaces).
-- In the terminal enter
+Once you have set-up a database, execute the SQL below. 
 
-```
-git clone https://github.com/CHT2520-web-prog/basic-CRUD-in-PHP
-```
+You should then be able to follow the instructions from 'Getting started' onwards.
 
-This will copy the contents of this repository into your codespace.
+## Setting up the database
 
-### Setting up the database
+Open your existing codespace (DON'T CREATE A NEW ONE) [https://github.com/codespaces](https://github.com/codespaces).
 
-The codespace has a database installed. It also has a database management tool installed called Adminer.
+Your codespace already has a database installed (MariaDB). It also has a database management tool installed called Adminer.
 
 Select the 'ports' tab (next to terminal).
-Hover over the Forwarded port for 8081 and click 'Open in Browser'
+Hover over the Forwarded port for 8080 and click 'Open in Browser'
 A new tab should open for Adminer.
 
 Adminer is like a lightweight version of phpmyadmin.
 To log into Adminer enter the following:-
-- username: **root**
+- username: **student**
 - password: **secret**
-- database: **cht2520**
+- database: **webdev**
 
-This will give you access to a database called **cht2520**.
+This will give you access to a database called **webdev**.
 Select 'SQL Command' and enter the following SQL
 
 ```sql
@@ -40,7 +38,7 @@ CREATE TABLE films (
   year smallint(6) NOT NULL,
   duration smallint(6) NOT NULL,
   CONSTRAINT PRIMARY KEY (id)
-)
+);
 ```
 
 Then click 'Execute'.
@@ -67,106 +65,44 @@ INSERT INTO `films` (`id`, `title`, `year`, `duration`) VALUES
 ```
 
 - Hit 'Execute'
-- From near the top of the page select the database (cht2520) and then select the films table and then 'select data' to confirm this has worked.
+- From near the top of the page select the database (webdev) and then select the films table and then 'select data' to confirm this has worked.
 
-### Getting started
+## Getting started
 
-- Back in the codespace, from the *basic-CRUD-in-PHP* folder, open *index.php*. Change the connection settings to match your database and enviornment. This is the line you need to change
+Clone this repo.
 
 ```
+git clone https://github.com/CHT2520-web-prog/basic-CRUD-in-PHP
+```
+
+in the terminal navigate to this folder
+
+```
+cd basic-CRUD-in-PHP
+```
+
+- Open *index.php*. Change the connection settings to match your database and environment. This is the line you need to change.
+
+```php
     $conn = new PDO('mysql:host=localhost;dbname=MyDatabase', 'MyUsername', 'MyPassword');
 ```
 
 You will need to change it to:
 
+```php
+    $conn = new PDO('mysql:host=db;dbname=webdev', 'student', 'secret');
 ```
-    $conn = new PDO('mysql:host=db;dbname=cht2520', 'root', 'secret');
+- Start the web server
 ```
-- Start Apache (`apache2ctl start`)
-- Browse to the *basic-CRUD-in-PHP* folder. You should see the *index.php* page displayed. it should be showing the list of films from the database.
-
-Now move onto [Completing the practical work](#practical)
-
-## If you are using XAMPP <a name="xampp"></a>
-
-- Download this repository and unzip it. Move the folder into your *htdocs* directory on XAMPP.
-
-### Setting up a database
-
-MySQL is part of XAMPP. To complete these exercises you will need Apache to be running and MySQL (check your control panel).
-
-- In a web browser enter http://localhost/phpmyadmin/ and you will be taken to admin home screen for phpMyAdmin. It should also be available as the 'admin' link from the control panel.
-
-It's a good idea to set up a database where you can do all your work for the module. You will also need to set up a user with access to this database.
-
-- From the navigation bar along the top select 'User accounts'.
-- Select 'Add user account' and then enter the following details:
-  - Username: Enter a username (and remember it)
-  - Host name: select 'Local'. It should fill the second field with 'localhost'.
-  - Password: Enter a password (and remember it!)
-  - Scroll down a bit and select the checkbox that says _'Create database with same name and grant all privileges.'_
-  - Scroll down to the bottom of the page and select 'Go'.
-
-A database named cht2520 should appear on the left-hand side.
-
-- Select this database. At the moment it will tell you 'No tables found'
-
-- Click on the SQL tab, paste in the following code:
-
-```SQL
-CREATE TABLE films (
-  id int(11) UNSIGNED NOT NULL AUTO_INCREMENT,
-  title varchar(100) NOT NULL,
-  year smallint(6) NOT NULL,
-  duration smallint(6) NOT NULL,
-  CONSTRAINT PRIMARY KEY (id)
-)
+php -S 0.0.0.0:8000
 ```
 
-- Click 'Go'
-- A 'films' table should be created
-- Select the table and click 'structure' to check the table you have created
-- Select the SQL tab again. Paste in the following:
+- You should see the *index.php* page displayed. It should be showing the list of films from the database.
 
-```SQL
-INSERT INTO `films` (`id`, `title`, `year`, `duration`) VALUES
-(NULL, 'Winter\'s Bone', 2010, 100),
-(NULL, 'Do The Right Thing', 1989, 120),
-(NULL, 'The Incredibles', 2004, 115),
-(NULL, 'The Godfather', 1972, 177),
-(NULL, 'Dangerous Minds', 1995, 99),
-(NULL, 'Spirited Away', 2001, 124),
-(NULL, 'Moonlight', 2016, 111),
-(NULL, 'Life of PI', 2012, 127),
-(NULL, 'Gravity', 2013, 91),
-(NULL, 'Arrival', 2016, 116),
-(NULL, 'Wonder Woman', 2017, 141),
-(NULL, 'Mean Girls', 2004, 97),
-(NULL, 'Inception', 2010, 108),
-(NULL, 'Donnie Darko', 2001, 113),
-(NULL, 'Get Out', 2017, 117);
-```
 
-- Click 'go'
-- Select browse to make sure this worked. You should be able to see the list of films.
+## Completing the practical work
 
-### Getting started
-
-- Start with _index.php_. In the PHP code, change the connection settings to match your database. This is the line you need to change
-
-```
-    $conn = new PDO('mysql:host=localhost;dbname=MyDatabase', 'MyUsername', 'MyPassword');
-```
-
-You will need to change _MyDatabase_ to cht2520, and _MyUsername_ and _MyPassword_ to match the username and password you entered.
-
-- View _index.php_ in a browser. You should see a list of films.
-
-Now move onto [Completing the practical work](#practical).
-
-## Completing the practical work <a name="practical"></a>
-
-- Have a good look through the code in _index.php_. Make sure you understand what each line of code is doing. Refer to [Form Processing](form-processing.md) and [PHP, Databases and PDO](pdo.md) for explanations.
+- Have a good look through the code in _index.php_. Make sure you understand what each line of code is doing. Refer to the comments in the code, [Form Processing](form-processing.md) and [PHP, Databases and PDO](pdo.md) for explanations.
 
 ### Getting the other operations to work
 
@@ -176,12 +112,9 @@ Now move onto [Completing the practical work](#practical).
 ## Testing your understanding
 
 ### Questions
-
 - _create.php_ doesn't connect to the database. Why?
 - In _show.php_ the details for a single film are shown, how does this page 'know' which film to display i.e. how is data passed from _index.php_ to _show.php_?
-
 - _destroy.php_ (and _update.php_) also operate on a single film. How do these pages know which film to delete/update e.g. how is data passed from _show.php_ to _destroy.php_? How is this different to the way in which data is passed from _index.php_ to _show.php_?
-
 - _index.php_ uses the `$conn->query()` method to execute SQL, why does _show.php_ use `$stmt->execute()`? Why isn't `$conn->query()` used in _show.php_?
 
 ### Editing the code
@@ -189,6 +122,13 @@ Now move onto [Completing the practical work](#practical).
 - In _index.php_ how can we display the year for the film alongside the title e.g. Jaws (1975)
 - How would you edit the code so that the list of films in _index.php_ appears in date order with the most recent first.
 
-### Optional extra
-Make sure you really understand the basic CRUD code is this repository, this is the basis for future examples we will look at (inluding Laravel). However, if you fully understand the code, try the following:
-- These examples are as simple as they can be. How could you perform some basic user input validation i.e. testing that the user has completed all the fields when adding a new film. Hint: You will need to add some code in _store.php_ to test the values from the form. If you detect a problem, `echo` out a message to the user and use `die();` to prevent the INSERT code from running.
+## Re-factoring the code
+One obvious issue in this application is the huge amount of duplicate code in both the PHP and HTML.
+
+In the next two weeks we will look at design patterns for writing more maintainable code, for now think how can you use `include`/`require` statements to reduce the amount of duplication. 
+- You could place the code for connecting to the database in a separate PHP file and `require` it in any page that needs it. 
+- You could take the duplicate HTML code and place this in separate files e.g. `header.php` and include these files to build-up pages. 
+
+## Optional extra
+Make sure you really understand the basic CRUD code is this repository, this is the basis for future examples we will look at (including Laravel). However, if you fully understand the code, try the following:
+- These examples are as simple as they can be. How could you perform some basic error checking e.g. if we try and access a film that doesn't exist on the _show.php_ page we should return a 404 status code. 
