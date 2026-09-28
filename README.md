@@ -8,7 +8,7 @@ If you are using Herd, you will need to install a database.
 - My advice is to use https://dbngin.com/ to get started with a relational database.
 - I'd also recommend installing TablePlus (https://tableplus.com/) as visual tool for managing your databases. Alternatively you could simply use the SQLTools extension for VS Code. 
 
-Once you have set-up a database, execute the SQL below. 
+Once you have set-up a database, execute the SQL below to set-up a simple `films` table. 
 
 You should then be able to follow the instructions from 'Getting started' onwards.
 
@@ -100,7 +100,7 @@ php -S 0.0.0.0:8000
 - You should see the *index.php* page displayed. It should be showing the list of films from the database.
 
 
-## Completing the practical work
+## Completing the app
 
 - Have a good look through the code in _index.php_. Make sure you understand what each line of code is doing. Refer to the comments in the code, [Form Processing](form-processing.md) and [PHP, Databases and PDO](pdo.md) for explanations.
 

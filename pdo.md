@@ -1,9 +1,5 @@
 # PHP, Databases and PDO
-In previous weeks we have looked at key PHP concepts e.g. form processing and arrays. We have also looked at databases and using SQL.
 
-This week is all about running SQL statements using PHP, and building database driven PHP applications.
-
-## PHP database extensions
 There are several different PHP database extensions (pre-written code that allows us to communicate with a database from our own PHP code). These are:-
 
 * MySQL
@@ -15,7 +11,7 @@ We will use PDO. This is for two reasons:
 2. PDO offers some advantages over MySQLi e.g. it can work with many different databases not just MySQL.
 
 ## Connecting to a database using PDO
-The following code will create a connection to a MySQL database. We have to specify
+The following code will create a connection to a MySQL/MariaDB database. We have to specify
 * The name of the database we want to connect to.
 * The mysql username for this database.
 * The mysql password for this database.
@@ -80,7 +76,7 @@ catch (PDOException $exception)
 	echo "Oh no, there was a problem" . $exception->getMessage();
 }
 
-$query = "SELECT * FROM countries"; // a simple string that contains our SQL query
+$query = "SELECT name FROM countries"; // a simple string that contains our SQL query
 $resultset = $conn->query($query); //run the query
 $countries  = $resultset->fetchAll(); //retrieve all the rows from the resultset
 $conn=NULL; //close the connection to the database
@@ -130,7 +126,7 @@ catch (PDOException $exception)
 {
 	echo "Oh no, there was a problem" . $exception->getMessage();
 }
-$query = "SELECT * FROM countries WHERE id = 2;"; // a simple string that contains our SQL query
+$query = "SELECT name FROM countries WHERE id = 2;"; // a simple string that contains our SQL query
 $resultset = $conn->query($query); //run the query
 $country  = $resultset->fetch(); //retrieve a single row
 $conn=NULL; //close the connection
@@ -159,7 +155,7 @@ catch (PDOException $exception)
 {
 	echo "Oh no, there was a problem" . $exception->getMessage();
 }
-$query = "SELECT * FROM countries WHERE name=:countryName;";
+$query = "SELECT name, population FROM countries WHERE name=:countryName;";
 $preparedStmt = $conn->prepare($query);
 $preparedStmt->bindValue(':countryName','France');
 $preparedStmt->execute();
