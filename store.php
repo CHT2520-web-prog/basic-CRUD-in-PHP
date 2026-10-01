@@ -1,13 +1,6 @@
 <?php
 // Connect to the database
-try{
-    $conn = new PDO('mysql:host=localhost;dbname=webdev', 'student', 'secret');
-    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-}
-catch (PDOException $exception)
-{
-    echo "Oh no, there was a problem" . $exception->getMessage();
-}
+require 'database.php';
 
 
 //This is a simple example we would normally do some form validation here

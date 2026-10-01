@@ -1,13 +1,6 @@
 <?php
 //Connect to the database
-try{
-    $conn = new PDO('mysql:host=localhost;dbname=webdev', 'student', 'secret');
-    $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-}
-catch (PDOException $exception)
-{
-	echo "Oh no, there was a problem" . $exception->getMessage();
-}
+require 'database.php';
 //Get the id from the query string e.g. for show.php?id=2, $_GET['id'] has a value of 2
 $id = $_GET['id'];
 //Create a prepared statement. This uses the $id value to select a specific film
