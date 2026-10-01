@@ -2,7 +2,7 @@
 <?php
 //Connect to the database
 try{
-    $conn = new PDO('mysql:host=localhost;dbname=MyDatabase', 'MyUsername', 'MyPassword');
+    $conn = new PDO('mysql:host=localhost;dbname=webdev', 'student', 'secret');
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
 catch (PDOException $exception)
@@ -48,7 +48,7 @@ echo "<p>Duration:{$film['duration']}</p>";
 
 
 // Link to the edit page, passing the film's id in the query string e.g. edit.php?id=3
-echo "<a href='edit.php?id={$film['id']}/edit'><button>Edit</button></a> ";
+echo "<a href='edit.php?id={$film['id']}'><button>Edit</button></a> ";
 ?>
 
 <!-- For delete we need to use a POST action -->

@@ -1,7 +1,7 @@
 <?php
 //Connect to the database
 try{
-    $conn = new PDO('mysql:host=localhost;dbname=MyDatabase', 'MyUsername', 'MyPassword');
+    $conn = new PDO('mysql:host=localhost;dbname=webdev', 'student', 'secret');
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
 catch (PDOException $exception)
@@ -17,7 +17,7 @@ $id = $_POST['id'];
 $stmt = $conn->prepare("DELETE FROM films WHERE films.id = :id");
 $stmt->bindValue(':id',$id);
 $stmt->execute();
-//Close the connect
+//Close the connection
 $conn=NULL;
 //Redirect to the home page
 header('Location: index.php');
