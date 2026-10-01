@@ -2,7 +2,7 @@
 <?php
 //Connect to the database
 try{
-    $conn = new PDO('mysql:host=localhost;dbname=webdev', 'student', 'secret');
+    $conn = new PDO('mysql:host=localhost;dbname=MyDatabase', 'MyUsername', 'MyPassword');
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
 catch (PDOException $exception)
