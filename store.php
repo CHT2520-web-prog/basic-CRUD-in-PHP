@@ -1,7 +1,7 @@
 <?php
 // Connect to the database
 try{
-    $conn = new PDO('mysql:host=localhost;dbname=MyDatabase', 'MyUsername', 'MyPassword');
+    $conn = new PDO('mysql:host=localhost;dbname=webdev', 'student', 'secret');
     $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 }
 catch (PDOException $exception)
@@ -32,4 +32,3 @@ $conn = NULL;
 //Redirect the user to the home page
 header('Location: index.php');
 die();
-?>

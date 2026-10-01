@@ -87,7 +87,7 @@ $col = $_GET["col"]; //gets hold of whatever the user typed into the col text fi
 * When the user clicks the submit button, the browser will generate the  url like the following:
 
 ```
-http://localhost/CIT2202/somepage.php?uname=Fred&col=red
+http://localhost/CHT2520/somepage.php?uname=Fred&col=red
 ```
 
 * The name-value pairs are appended to the URL.
