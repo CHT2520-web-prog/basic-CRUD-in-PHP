@@ -126,7 +126,7 @@ One obvious issue in this application is the huge amount of duplicate code in bo
 
 In the next two weeks we will look at design patterns for writing more maintainable code, for now think how can you use `require` statements to structure the app and reduce the amount of duplication. 
 
-### Removing the duplication database connection code
+### Removing the duplicate database connection code
 - Place the code for connecting to the database in a separate PHP file and `require` it in any page that needs it. 
 
 **database.php**
