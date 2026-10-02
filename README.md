@@ -114,7 +114,7 @@ php -S 0.0.0.0:8000
 - In _show.php_ the details for a single film are shown, how does this page 'know' which film to display i.e. how is data passed from _index.php_ to _show.php_?
 - _destroy.php_ (and _update.php_) also operate on a single film. How do these pages know which film to delete/update e.g. how is data passed from _show.php_ to _destroy.php_? How is this different to the way in which data is passed from _index.php_ to _show.php_?
 - _index.php_ uses the `$conn->query()` method to execute SQL, why does _show.php_ use `$stmt->execute()`? Why isn't `$conn->query()` used in _show.php_?
-- Why isn't there any HTML code in _update.php_ and _detroy.php_?
+- Why isn't there any HTML code in _update.php_ and _destroy.php_?
 
 ### Editing the code
 
